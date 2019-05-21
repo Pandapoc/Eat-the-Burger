@@ -1,9 +1,9 @@
 <h1>Burgers!</h1>
 
 <div class="burgers">
-    {{#each unburgers}}
-        <h3 style="align-left" id="burger">{{unburgers}}</h3>
-        <button id="devour">DEVOUR</button>
+    {{#each burgers}}
+        <h3>{{burgers}}</h3>
+        <button id="devour" data-uid="{{id}}">DEVOUR</button>
         <hr>
     {{/each}}
 

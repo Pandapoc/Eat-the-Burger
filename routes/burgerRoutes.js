@@ -5,7 +5,7 @@ module.exports = app => {
     app.get('/', (req, res) => {
         Burger.findAll()
             .then(burgers =>
-                res.render('index', { burgers })
+                res.render('index', { burgers, id })
             )
             .catch(e => console.log(e))
     })
