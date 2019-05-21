@@ -8,9 +8,9 @@ document.addEventListener('click', e => {
             body: JSON.stringify({
                 burgerName: document.querySelector('#burger').value
             })
+            location.reload()
         })
         document.querySelector('#burger').value = ''
-        location.reload()
 
     } else if (e.target.id === 'devour') {
         let burger = {}
@@ -21,8 +21,8 @@ document.addEventListener('click', e => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify(burger)
+            location.reload()
         })
         document.querySelector('#burger').value = ''
-        location.reload()
     }
 })
