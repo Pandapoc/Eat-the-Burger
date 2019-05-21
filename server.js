@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express()
 const { join } = require('path')
-const routes = require('./routes')
 
 app.use(express.static(join(__dirname, 'public')))
 app.use(express.urlencoded({ extended: true }))
@@ -10,8 +9,10 @@ app.engine('.hbs', require('express-handlebars')({ defaultLayout: 'main', extnam
 app.set('view engine', '.hbs')
 
 
-app.use(routes)
+require('./routes')(app)
 
-app.listen(3000)
+require('./config').sync()
+    .then(_ => app.listen(3000))
+    .catch(e => console.log(e))
 
 console.log('ping')
