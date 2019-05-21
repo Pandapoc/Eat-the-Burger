@@ -2,8 +2,8 @@
 
 <div class="burgers">
     {{#each burgers}}
-        <h3>{{burgers}}</h3>
-        <button id="devour" data-uid="{{id}}">DEVOUR</button>
+        <h3>{{this.dataValues.burgerName}}</h3>
+        <button id="devour" data-uid="{{this.dataValues.id}}">DEVOUR</button>
         <hr>
     {{/each}}
 
